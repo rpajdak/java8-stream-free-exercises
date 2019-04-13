@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c19f9f94-e258-4f26-a3ea-64038fa08722" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/logic/WorkShop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7409">
+              <caret line="277" column="11" selection-start-line="277" selection-start-column="11" selection-end-line="277" selection-end-column="11" />
+              <folding>
+                <element signature="e#5860#5861#0" expanded="true" />
+                <element signature="e#5881#5882#0" expanded="true" />
+                <element signature="e#7459#7460#0" expanded="true" />
+                <element signature="e#7480#7481#0" expanded="true" />
+                <element signature="e#7691#7692#0" expanded="true" />
+                <element signature="e#7712#7713#0" expanded="true" />
+                <element signature="e#8000#8001#0" expanded="true" />
+                <element signature="e#8021#8022#0" expanded="true" />
+                <element signature="e#8109#8110#0" expanded="true" />
+                <element signature="e#8128#8129#0" expanded="true" />
+                <element signature="e#8442#8443#0" expanded="true" />
+                <element signature="e#8461#8462#0" expanded="true" />
+                <element signature="e#8667#8668#0" expanded="true" />
+                <element signature="e#8688#8689#0" expanded="true" />
+                <element signature="e#8891#8892#0" expanded="true" />
+                <element signature="e#8912#8913#0" expanded="true" />
+                <element signature="e#9102#9103#0" expanded="true" />
+                <element signature="e#9123#9124#0" expanded="true" />
+                <element signature="e#9352#9353#0" expanded="true" />
+                <element signature="e#9373#9374#0" expanded="true" />
+                <element signature="e#9542#9543#0" expanded="true" />
+                <element signature="e#9563#9564#0" expanded="true" />
+                <element signature="e#9771#9772#0" expanded="true" />
+                <element signature="e#9792#9793#0" expanded="true" />
+                <element signature="e#10003#10004#0" expanded="true" />
+                <element signature="e#10024#10025#0" expanded="true" />
+                <element signature="e#10279#10280#0" expanded="true" />
+                <element signature="e#10300#10301#0" expanded="true" />
+                <element signature="e#10429#10430#0" expanded="true" />
+                <element signature="e#10475#10476#0" expanded="true" />
+                <element signature="e#10635#10636#0" expanded="true" />
+                <element signature="e#10656#10657#0" expanded="true" />
+                <element signature="e#10855#10856#0" expanded="true" />
+                <element signature="e#10876#10877#0" expanded="true" />
+                <element signature="e#11000#11001#0" expanded="true" />
+                <element signature="e#11021#11022#0" expanded="true" />
+                <element signature="e#11184#11185#0" expanded="true" />
+                <element signature="e#11205#11206#0" expanded="true" />
+                <element signature="e#11519#11520#0" expanded="true" />
+                <element signature="e#11540#11541#0" expanded="true" />
+                <element signature="e#11893#11894#0" expanded="true" />
+                <element signature="e#11914#11915#0" expanded="true" />
+                <element signature="e#12128#12129#0" expanded="true" />
+                <element signature="e#12149#12150#0" expanded="true" />
+                <element signature="e#12407#12408#0" expanded="true" />
+                <element signature="e#12428#12429#0" expanded="true" />
+                <element signature="e#12572#12573#0" expanded="true" />
+                <element signature="e#12593#12594#0" expanded="true" />
+                <element signature="e#12776#12777#0" expanded="true" />
+                <element signature="e#12797#12798#0" expanded="true" />
+                <element signature="e#13069#13070#0" expanded="true" />
+                <element signature="e#13090#13091#0" expanded="true" />
+                <element signature="e#13401#13402#0" expanded="true" />
+                <element signature="e#13422#13423#0" expanded="true" />
+                <element signature="e#13683#13684#0" expanded="true" />
+                <element signature="e#13704#13705#0" expanded="true" />
+                <element signature="e#14004#14005#0" expanded="true" />
+                <element signature="e#14025#14026#0" expanded="true" />
+                <element signature="e#14288#14289#0" expanded="true" />
+                <element signature="e#14309#14310#0" expanded="true" />
+                <element signature="e#14611#14612#0" expanded="true" />
+                <element signature="e#14632#14633#0" expanded="true" />
+                <element signature="e#14779#14780#0" expanded="true" />
+                <element signature="e#14800#14801#0" expanded="true" />
+                <element signature="e#14986#14987#0" expanded="true" />
+                <element signature="e#15007#15008#0" expanded="true" />
+                <element signature="e#15161#15162#0" expanded="true" />
+                <element signature="e#15182#15183#0" expanded="true" />
+                <element signature="e#15375#15376#0" expanded="true" />
+                <element signature="e#15396#15397#0" expanded="true" />
+                <element signature="e#15534#15535#0" expanded="true" />
+                <element signature="e#15555#15556#0" expanded="true" />
+                <element signature="e#15732#15733#0" expanded="true" />
+                <element signature="e#15753#15754#0" expanded="true" />
+                <element signature="e#15886#15887#0" expanded="true" />
+                <element signature="e#15907#15908#0" expanded="true" />
+                <element signature="e#16079#16080#0" expanded="true" />
+                <element signature="e#16100#16101#0" expanded="true" />
+                <element signature="e#16459#16460#0" expanded="true" />
+                <element signature="e#16480#16481#0" expanded="true" />
+                <element signature="e#16698#16699#0" expanded="true" />
+                <element signature="e#16765#16766#0" expanded="true" />
+                <element signature="e#17023#17024#0" expanded="true" />
+                <element signature="e#17090#17091#0" expanded="true" />
+                <element signature="e#17293#17294#0" expanded="true" />
+                <element signature="e#17314#17315#0" expanded="true" />
+                <element signature="e#17582#17583#0" expanded="true" />
+                <element signature="e#17603#17604#0" expanded="true" />
+                <element signature="e#17702#17703#0" expanded="true" />
+                <element signature="e#17721#17722#0" expanded="true" />
+                <element signature="e#17859#17860#0" expanded="true" />
+                <element signature="e#17878#17879#0" expanded="true" />
+                <element signature="e#18212#18213#0" expanded="true" />
+                <element signature="e#18233#18234#0" expanded="true" />
+                <element signature="e#18606#18607#0" expanded="true" />
+                <element signature="e#18627#18628#0" expanded="true" />
+                <element signature="e#18930#18931#0" expanded="true" />
+                <element signature="e#18951#18952#0" expanded="true" />
+                <element signature="e#19294#19295#0" expanded="true" />
+                <element signature="e#19315#19316#0" expanded="true" />
+                <element signature="e#19654#19655#0" expanded="true" />
+                <element signature="e#19675#19676#0" expanded="true" />
+                <element signature="e#20053#20054#0" expanded="true" />
+                <element signature="e#20074#20075#0" expanded="true" />
+                <element signature="e#20345#20346#0" expanded="true" />
+                <element signature="e#20366#20367#0" expanded="true" />
+                <element signature="e#20683#20684#0" expanded="true" />
+                <element signature="e#20704#20705#0" expanded="true" />
+                <element signature="e#21009#21010#0" expanded="true" />
+                <element signature="e#21030#21031#0" expanded="true" />
+                <element signature="e#21121#21122#0" expanded="true" />
+                <element signature="e#21142#21143#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/stream/Stream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="750" column="10" selection-start-line="750" selection-start-column="10" selection-end-line="750" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/stream/Collector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="290" column="46" selection-start-line="290" selection-start-column="46" selection-end-line="290" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pl/klolo/workshops/logic/WorkShopTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="475" column="72" selection-start-line="475" selection-start-column="72" selection-end-line="475" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Company.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Currency.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Holding.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Permit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Account.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/klolo/workshops/logic/WorkShop.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="java8-stream-free-exercises" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/streams.iml" />
+        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
+        <option value="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+        <option value="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_4.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="workshops" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="workshops" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="workshops" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="workshops" type="462c0819:PsiDirectoryNode" />
+              <item name="mock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="kata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lang" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.WorkShopTest.shouldReturnHowMuchAccountHaveUsersAsStream">
+    <configuration name="WorkShopTest.shouldReturnAllCompaniesNameAsStringUsingStringBuilder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="streams" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.klolo.workshops.logic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.klolo.workshops.logic" />
+      <option name="MAIN_CLASS_NAME" value="pl.klolo.workshops.logic.WorkShopTest" />
+      <option name="METHOD_NAME" value="shouldReturnAllCompaniesNameAsStringUsingStringBuilder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkShopTest,shouldReturnAmountOfHoldingWhereIsAtLeastOneCompany and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="streams" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="pl.klolo.workshops.logic.WorkShopTest,shouldReturnAmountOfHoldingWhereIsAtLeastOneCompany" />
+        <pattern testClass="pl.klolo.workshops.logic.WorkShopTest,shouldReturnAmountOfHoldingWhereIsAtLeastOneCompanyAsStream" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkShopTest.shouldReturnHowMuchAccountHaveUsersAsStream" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="streams" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.klolo.workshops.logic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.klolo.workshops.logic" />
+      <option name="MAIN_CLASS_NAME" value="pl.klolo.workshops.logic.WorkShopTest" />
+      <option name="METHOD_NAME" value="shouldReturnHowMuchAccountHaveUsersAsStream" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkShopTest.shouldReturnNamesOfAllHoldingInString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="streams" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.klolo.workshops.logic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.klolo.workshops.logic" />
+      <option name="MAIN_CLASS_NAME" value="pl.klolo.workshops.logic.WorkShopTest" />
+      <option name="METHOD_NAME" value="shouldReturnNamesOfAllHoldingInString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkShopTest.shouldReturnNamesOfAllHoldingInStringAsStream" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="streams" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.klolo.workshops.logic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.klolo.workshops.logic" />
+      <option name="MAIN_CLASS_NAME" value="pl.klolo.workshops.logic.WorkShopTest" />
+      <option name="METHOD_NAME" value="shouldReturnNamesOfAllHoldingInStringAsStream" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.WorkShopTest.shouldReturnHowMuchAccountHaveUsersAsStream" />
+        <item itemvalue="JUnit.WorkShopTest.shouldReturnAllCompaniesNameAsStringUsingStringBuilder" />
+        <item itemvalue="JUnit.WorkShopTest.shouldReturnNamesOfAllHoldingInString" />
+        <item itemvalue="JUnit.WorkShopTest.shouldReturnNamesOfAllHoldingInStringAsStream" />
+        <item itemvalue="JUnit.WorkShopTest,shouldReturnAmountOfHoldingWhereIsAtLeastOneCompany and 1 more" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c19f9f94-e258-4f26-a3ea-64038fa08722" name="Default Changelist" comment="" />
+      <created>1555077816985</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555077816985</updated>
+      <workItem from="1555077818677" duration="9843000" />
+      <workItem from="1555157457357" duration="5872000" />
+    </task>
+    <task id="LOCAL-00001" summary="pierwsza część odpowiedzi">
+      <created>1555171224383</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555171224383</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="WorkShopTest - 2019.04.13 at 09h 57m 56s.xml">
+      <configuration name="WorkShopTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkShopTest,shouldReturnAmountOfHoldingWhereIsAtLeastOneCompany_and_1_more - 2019.04.13 at 10h 14m 16s.xml">
+      <configuration name="WorkShopTest,shouldReturnAmountOfHoldingWhereIsAtLeastOneCompany and 1 more" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkShopTest_shouldReturnNamesOfAllHoldingInStringAsStream - 2019.04.13 at 11h 46m 27s.xml">
+      <configuration name="WorkShopTest.shouldReturnNamesOfAllHoldingInStringAsStream" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkShopTest_shouldReturnNamesOfAllHoldingInString - 2019.04.13 at 11h 47m 56s.xml">
+      <configuration name="WorkShopTest.shouldReturnNamesOfAllHoldingInString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkShopTest_shouldReturnNamesOfAllHoldingInString - 2019.04.13 at 11h 48m 16s.xml">
+      <configuration name="WorkShopTest.shouldReturnNamesOfAllHoldingInString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkShopTest_shouldReturnNamesOfAllHoldingInString - 2019.04.13 at 11h 48m 29s.xml">
+      <configuration name="WorkShopTest.shouldReturnNamesOfAllHoldingInString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkShopTest_shouldReturnAllCompaniesNameAsStringUsingStringBuilder - 2019.04.13 at 14h 39m 16s.xml">
+      <configuration name="WorkShopTest.shouldReturnAllCompaniesNameAsStringUsingStringBuilder" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkShopTest_shouldReturnAllCompaniesNameAsStringUsingStringBuilder - 2019.04.13 at 14h 40m 12s.xml">
+      <configuration name="WorkShopTest.shouldReturnAllCompaniesNameAsStringUsingStringBuilder" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkShopTest_shouldReturnAllCompaniesNameAsStringUsingStringBuilder - 2019.04.13 at 14h 50m 14s.xml">
+      <configuration name="WorkShopTest.shouldReturnAllCompaniesNameAsStringUsingStringBuilder" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkShopTest_shouldReturnHowMuchAccountHaveUsersAsStream - 2019.04.13 at 15h 41m 56s.xml">
+      <configuration name="WorkShopTest.shouldReturnHowMuchAccountHaveUsersAsStream" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="15715000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Learn" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32994187" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31540698" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32994187" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="CheckStyle" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32994187" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.18590604" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="SciView" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_WIDTH">
+                <map>
+                  <entry key="2" value="227" />
+                  <entry key="3" value="227" />
+                </map>
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="pierwsza część odpowiedzi" />
+    <option name="LAST_COMMIT_MESSAGE" value="pierwsza część odpowiedzi" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/logic/WorkShop.java</url>
+          <line>110</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/mock/AccountMockGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="52" column="28" lean-forward="true" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/AccountType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Sex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="242" column="49" selection-start-line="242" selection-start-column="49" selection-end-line="242" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Currency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Holding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/Permit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/stream/Collectors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="156" column="44" selection-start-line="156" selection-start-column="36" selection-end-line="156" selection-end-column="44" />
+          <caret line="161" column="25" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="25" />
+          <caret line="161" column="36" selection-start-line="161" selection-start-column="28" selection-end-line="161" selection-end-column="36" />
+          <caret line="188" column="38" selection-start-line="188" selection-start-column="30" selection-end-line="188" selection-end-column="38" />
+          <caret line="189" column="27" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="27" />
+          <caret line="355" column="77" selection-start-line="355" selection-start-column="69" selection-end-line="355" selection-end-column="77" />
+          <caret line="373" column="22" selection-start-line="373" selection-start-column="14" selection-end-line="373" selection-end-column="22" />
+          <caret line="378" column="87" selection-start-line="378" selection-start-column="79" selection-end-line="378" selection-end-column="87" />
+          <caret line="392" column="54" selection-start-line="392" selection-start-column="46" selection-end-line="392" selection-end-column="54" />
+          <caret line="392" column="73" selection-start-line="392" selection-start-column="65" selection-end-line="392" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/stream/Collector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="290" column="46" selection-start-line="290" selection-start-column="46" selection-end-line="290" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/klolo/workshops/logic/WorkShopTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="475" column="72" selection-start-line="475" selection-start-column="72" selection-end-line="475" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/stream/Stream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="750" column="10" selection-start-line="750" selection-start-column="10" selection-end-line="750" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/klolo/workshops/logic/WorkShop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7409">
+          <caret line="277" column="11" selection-start-line="277" selection-start-column="11" selection-end-line="277" selection-end-column="11" />
+          <folding>
+            <element signature="e#5860#5861#0" expanded="true" />
+            <element signature="e#5881#5882#0" expanded="true" />
+            <element signature="e#7459#7460#0" expanded="true" />
+            <element signature="e#7480#7481#0" expanded="true" />
+            <element signature="e#7691#7692#0" expanded="true" />
+            <element signature="e#7712#7713#0" expanded="true" />
+            <element signature="e#8000#8001#0" expanded="true" />
+            <element signature="e#8021#8022#0" expanded="true" />
+            <element signature="e#8109#8110#0" expanded="true" />
+            <element signature="e#8128#8129#0" expanded="true" />
+            <element signature="e#8442#8443#0" expanded="true" />
+            <element signature="e#8461#8462#0" expanded="true" />
+            <element signature="e#8667#8668#0" expanded="true" />
+            <element signature="e#8688#8689#0" expanded="true" />
+            <element signature="e#8891#8892#0" expanded="true" />
+            <element signature="e#8912#8913#0" expanded="true" />
+            <element signature="e#9102#9103#0" expanded="true" />
+            <element signature="e#9123#9124#0" expanded="true" />
+            <element signature="e#9352#9353#0" expanded="true" />
+            <element signature="e#9373#9374#0" expanded="true" />
+            <element signature="e#9542#9543#0" expanded="true" />
+            <element signature="e#9563#9564#0" expanded="true" />
+            <element signature="e#9771#9772#0" expanded="true" />
+            <element signature="e#9792#9793#0" expanded="true" />
+            <element signature="e#10003#10004#0" expanded="true" />
+            <element signature="e#10024#10025#0" expanded="true" />
+            <element signature="e#10279#10280#0" expanded="true" />
+            <element signature="e#10300#10301#0" expanded="true" />
+            <element signature="e#10429#10430#0" expanded="true" />
+            <element signature="e#10475#10476#0" expanded="true" />
+            <element signature="e#10635#10636#0" expanded="true" />
+            <element signature="e#10656#10657#0" expanded="true" />
+            <element signature="e#10855#10856#0" expanded="true" />
+            <element signature="e#10876#10877#0" expanded="true" />
+            <element signature="e#11000#11001#0" expanded="true" />
+            <element signature="e#11021#11022#0" expanded="true" />
+            <element signature="e#11184#11185#0" expanded="true" />
+            <element signature="e#11205#11206#0" expanded="true" />
+            <element signature="e#11519#11520#0" expanded="true" />
+            <element signature="e#11540#11541#0" expanded="true" />
+            <element signature="e#11893#11894#0" expanded="true" />
+            <element signature="e#11914#11915#0" expanded="true" />
+            <element signature="e#12128#12129#0" expanded="true" />
+            <element signature="e#12149#12150#0" expanded="true" />
+            <element signature="e#12407#12408#0" expanded="true" />
+            <element signature="e#12428#12429#0" expanded="true" />
+            <element signature="e#12572#12573#0" expanded="true" />
+            <element signature="e#12593#12594#0" expanded="true" />
+            <element signature="e#12776#12777#0" expanded="true" />
+            <element signature="e#12797#12798#0" expanded="true" />
+            <element signature="e#13069#13070#0" expanded="true" />
+            <element signature="e#13090#13091#0" expanded="true" />
+            <element signature="e#13401#13402#0" expanded="true" />
+            <element signature="e#13422#13423#0" expanded="true" />
+            <element signature="e#13683#13684#0" expanded="true" />
+            <element signature="e#13704#13705#0" expanded="true" />
+            <element signature="e#14004#14005#0" expanded="true" />
+            <element signature="e#14025#14026#0" expanded="true" />
+            <element signature="e#14288#14289#0" expanded="true" />
+            <element signature="e#14309#14310#0" expanded="true" />
+            <element signature="e#14611#14612#0" expanded="true" />
+            <element signature="e#14632#14633#0" expanded="true" />
+            <element signature="e#14779#14780#0" expanded="true" />
+            <element signature="e#14800#14801#0" expanded="true" />
+            <element signature="e#14986#14987#0" expanded="true" />
+            <element signature="e#15007#15008#0" expanded="true" />
+            <element signature="e#15161#15162#0" expanded="true" />
+            <element signature="e#15182#15183#0" expanded="true" />
+            <element signature="e#15375#15376#0" expanded="true" />
+            <element signature="e#15396#15397#0" expanded="true" />
+            <element signature="e#15534#15535#0" expanded="true" />
+            <element signature="e#15555#15556#0" expanded="true" />
+            <element signature="e#15732#15733#0" expanded="true" />
+            <element signature="e#15753#15754#0" expanded="true" />
+            <element signature="e#15886#15887#0" expanded="true" />
+            <element signature="e#15907#15908#0" expanded="true" />
+            <element signature="e#16079#16080#0" expanded="true" />
+            <element signature="e#16100#16101#0" expanded="true" />
+            <element signature="e#16459#16460#0" expanded="true" />
+            <element signature="e#16480#16481#0" expanded="true" />
+            <element signature="e#16698#16699#0" expanded="true" />
+            <element signature="e#16765#16766#0" expanded="true" />
+            <element signature="e#17023#17024#0" expanded="true" />
+            <element signature="e#17090#17091#0" expanded="true" />
+            <element signature="e#17293#17294#0" expanded="true" />
+            <element signature="e#17314#17315#0" expanded="true" />
+            <element signature="e#17582#17583#0" expanded="true" />
+            <element signature="e#17603#17604#0" expanded="true" />
+            <element signature="e#17702#17703#0" expanded="true" />
+            <element signature="e#17721#17722#0" expanded="true" />
+            <element signature="e#17859#17860#0" expanded="true" />
+            <element signature="e#17878#17879#0" expanded="true" />
+            <element signature="e#18212#18213#0" expanded="true" />
+            <element signature="e#18233#18234#0" expanded="true" />
+            <element signature="e#18606#18607#0" expanded="true" />
+            <element signature="e#18627#18628#0" expanded="true" />
+            <element signature="e#18930#18931#0" expanded="true" />
+            <element signature="e#18951#18952#0" expanded="true" />
+            <element signature="e#19294#19295#0" expanded="true" />
+            <element signature="e#19315#19316#0" expanded="true" />
+            <element signature="e#19654#19655#0" expanded="true" />
+            <element signature="e#19675#19676#0" expanded="true" />
+            <element signature="e#20053#20054#0" expanded="true" />
+            <element signature="e#20074#20075#0" expanded="true" />
+            <element signature="e#20345#20346#0" expanded="true" />
+            <element signature="e#20366#20367#0" expanded="true" />
+            <element signature="e#20683#20684#0" expanded="true" />
+            <element signature="e#20704#20705#0" expanded="true" />
+            <element signature="e#21009#21010#0" expanded="true" />
+            <element signature="e#21030#21031#0" expanded="true" />
+            <element signature="e#21121#21122#0" expanded="true" />
+            <element signature="e#21142#21143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>streams</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
