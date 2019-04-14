@@ -11,6 +11,7 @@ import pl.klolo.workshops.domain.User;
 import pl.klolo.workshops.mock.HoldingMockGenerator;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -68,7 +69,7 @@ class WorkShop {
   }
 
   private boolean hasMoreThanOneCompany(Holding holding) {
-    return nonNull(holding.getCompanies()) && holding.getCompanies().size() > 0;
+    return nonNull(holding.getCompanies()) && isOlderThen(0, holding.getCompanies().size());
   }
 
   /**
@@ -374,7 +375,7 @@ class WorkShop {
     return account
         .getAmount()
         .multiply(BigDecimal.valueOf(account.getCurrency().rate))
-        .setScale(3, BigDecimal.ROUND_HALF_UP);
+        .setScale(3, RoundingMode.HALF_UP);
   }
   /**
    * Przelicza kwotę na rachunku na złotówki za pomocą kursu określonego w enum Currency.
@@ -391,35 +392,67 @@ class WorkShop {
    * Przelicza kwotę na podanych rachunkach na złotówki za pomocą kursu określonego w enum Currency  i sumuje ją.
    */
   BigDecimal getTotalCashInPLN(final List<Account> accounts) {
-    return null;
+    BigDecimal returnValue = BigDecimal.ZERO;
+    for (Account account: accounts) {
+      returnValue = returnValue.add(getAmountInPln(account));
+    }
+    return returnValue;
   }
-
   /**
    * Przelicza kwotę na podanych rachunkach na złotówki za pomocą kursu określonego w enum Currency  i sumuje ją. Napisz to za pomocą strumieni.
    */
   BigDecimal getTotalCashInPLNAsStream(final List<Account> accounts) {
-    return null;
+    return accounts
+        .stream()
+        .map(this::getAmountInPln)
+        .reduce(BigDecimal::add)
+        .get();
   }
 
   /**
    * Zwraca imiona użytkowników w formie zbioru, którzy spełniają podany warunek.
    */
   Set<String> getUsersForPredicate(final Predicate<User> userPredicate) {
-    return null;
+    Set<String> userNames = new HashSet<>();
+    for (Holding holding: holdings) {
+      for (Company company: holding.getCompanies()) {
+        for (User user: company.getUsers()) {
+          if(userPredicate.test(user)){
+            userNames.add(user.getFirstName());
+          }
+        }
+      }
+    }
+    return userNames;
   }
-
   /**
    * Zwraca imiona użytkowników w formie zbioru, którzy spełniają podany warunek. Napisz to za pomocą strumieni.
    */
   Set<String> getUsersForPredicateAsStream(final Predicate<User> userPredicate) {
-    return null;
+    return getUserStream()
+        .filter(userPredicate)
+        .map(User::getFirstName)
+        .collect(Collectors.toSet());
   }
 
   /**
    * Metoda filtruje użytkowników starszych niż podany jako parametr wiek, wyświetla ich na konsoli, odrzuca mężczyzn i zwraca ich imiona w formie listy.
    */
   List<String> getOldWoman(final int age) {
-    return null;
+    List<String> names = new ArrayList<>();
+    for (Holding holding: holdings) {
+      for (Company company: holding.getCompanies()) {
+        for(User user: company.getUsers()) {
+          if(isOlderThen(age, user.getAge())) {
+            System.out.println(user);
+            if(user.getSex() != Sex.MAN) {
+              names.add(user.getFirstName());
+            }
+          }
+        }
+      }
+    }
+    return names;
   }
 
   /**
@@ -427,7 +460,16 @@ class WorkShop {
    * to za pomocą strumieni.
    */
   List<String> getOldWomanAsStream(final int age) {
-    return null;
+    return getUserStream()
+        .filter(user -> isOlderThen(age, user.getAge()))
+        .peek(System.out::println)
+        .filter(user -> user.getSex() != Sex.MAN)
+        .map(User::getFirstName)
+        .collect(Collectors.toList());
+  }
+
+  private boolean isOlderThen(int age, int age2) {
+    return age2 > age;
   }
 
   /**

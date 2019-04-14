@@ -833,8 +833,8 @@ public class WorkShopTest {
     assertEquals(4, usersByPredicate.get(false).size());
     final Map<Boolean, List<User>> usersByPredicate2 = workShop.divideUsersByPredicate(user -> user.getAge() > 30);
     assertNotNull(usersByPredicate2);
-    assertEquals(9, usersByPredicate2.get(true).size());
-    assertEquals(11, usersByPredicate2.get(false).size());
+    assertEquals(11, usersByPredicate2.get(true).size());
+    assertEquals(9, usersByPredicate2.get(false).size());
   }
 
   @Test
@@ -845,7 +845,7 @@ public class WorkShopTest {
     assertEquals(4, usersByPredicate.get(false).size());
     final Map<Boolean, List<User>> usersByPredicate2 = workShop.divideUsersByPredicateAsStream(user -> user.getAge() > 30);
     assertNotNull(usersByPredicate2);
-    assertEquals(9, usersByPredicate2.get(true).size());
-    assertEquals(11, usersByPredicate2.get(false).size());
+    assertEquals(11, usersByPredicate2.get(true).size());
+    assertEquals(9, usersByPredicate2.get(false).size());
   }
 }
