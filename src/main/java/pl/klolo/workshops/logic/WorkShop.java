@@ -16,6 +16,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -324,12 +325,12 @@ class WorkShop {
    * @see #getAllCurrencies()
    */
   String getAllCurrenciesUsingGenerate() {
-    Set<Currency> curenciesSet = getCurenciesSet();
-    return Stream.generate(curenciesSet.iterator()::next)
+    List<String> currencies = getAllCurrenciesToListAsString();
+    return Stream.generate(currencies.iterator()::next)
         .distinct()
-        .limit(curenciesSet.size())
-        .map(Enum::toString)
-        .sorted().collect(Collectors.joining(", "));
+        .limit(currencies.size())
+        .sorted()
+        .collect(Collectors.joining(", "));
   }
 
   /**
@@ -726,7 +727,14 @@ class WorkShop {
   private Set<Currency> getCurenciesSet() {
     return null;
   }
-
+  private List<String> getAllCurrenciesToListAsString() {
+    return getCompanyStream()
+        .flatMap(company -> company.getUsers().stream())
+        .flatMap(user -> user.getAccounts().stream())
+        .map(Account::getCurrency)
+        .map(c -> Objects.toString(c, null))
+        .collect(Collectors.toList());
+  }
   /**
    * Tworzy strumień rachunków.
    */
