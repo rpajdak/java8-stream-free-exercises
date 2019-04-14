@@ -6,6 +6,7 @@ import pl.klolo.workshops.domain.Company;
 import pl.klolo.workshops.domain.Currency;
 import pl.klolo.workshops.domain.Holding;
 import pl.klolo.workshops.domain.Permit;
+import pl.klolo.workshops.domain.Sex;
 import pl.klolo.workshops.domain.User;
 import pl.klolo.workshops.mock.HoldingMockGenerator;
 
@@ -36,7 +37,7 @@ class WorkShop {
   private final List<Holding> holdings;
 
   // Predykat określający czy użytkownik jest kobietą
-  private final Predicate<User> isWoman = null;
+  private final Predicate<User> isWoman = user -> user.getSex() == Sex.WOMAN;
 
   WorkShop() {
     final HoldingMockGenerator holdingMockGenerator = new HoldingMockGenerator();
@@ -337,31 +338,53 @@ class WorkShop {
    * Zwraca liczbę kobiet we wszystkich firmach.
    */
   long getWomanAmount() {
-    return -1;
+    long numberOfWomen = 0L;
+    for (Holding holding: holdings) {
+      for (Company company: holding.getCompanies()) {
+        for (User user: company.getUsers()) {
+          if(user.getSex() == Sex.WOMAN) {
+            numberOfWomen++;
+          }
+        }
+      }
+    }
+    return numberOfWomen;
   }
 
   /**
    * Zwraca liczbę kobiet we wszystkich firmach. Powtarzający się fragment kodu tworzący strumień uzytkowników umieść w osobnej metodzie. Predicate określający
-   * czy mamy doczynienia z kobietą inech będzie polem statycznym w klasie. Napisz to za pomocą strumieni.
+   * czy mamy doczynienia z kobietą niech będzie polem statycznym w klasie. Napisz to za pomocą strumieni.
    */
   long getWomanAmountAsStream() {
-    return -1;
+    return getUserStream()
+        .filter(isWoman)
+        .count();
   }
 
 
   /**
-   * Przelicza kwotę na rachunku na złotówki za pomocą kursu określonego w enum Currency. Ustaw precyzje na 3 miejsca po przecinku.
+   * Przelicza kwotę na rachunku na złotówki za pomocą kursu określonego w enum Currency.
+   * Ustaw precyzje na 3 miejsca po przecinku.
    */
   BigDecimal getAccountAmountInPLN(final Account account) {
-    return null;
+    return getAmountInPln(account);
   }
 
-
+  private BigDecimal getAmountInPln(Account account) {
+    return account
+        .getAmount()
+        .multiply(BigDecimal.valueOf(account.getCurrency().rate))
+        .setScale(3, BigDecimal.ROUND_HALF_UP);
+  }
   /**
-   * Przelicza kwotę na rachunku na złotówki za pomocą kursu określonego w enum Currency. Napisz to za pomocą strumieni.
+   * Przelicza kwotę na rachunku na złotówki za pomocą kursu określonego w enum Currency.
+   * Napisz to za pomocą strumieni.
    */
   BigDecimal getAccountAmountInPLNAsStream(final Account account) {
-    return null;
+    return Stream.of(account)
+        .map(this::getAmountInPln)
+        .findFirst()
+        .get();
   }
 
   /**

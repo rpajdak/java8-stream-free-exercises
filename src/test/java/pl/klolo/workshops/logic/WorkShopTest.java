@@ -152,7 +152,7 @@ public class WorkShopTest {
         .currency(Currency.PLN)
         .build();
 
-    assertEquals(new BigDecimal("1.00"), workShop.getAccountAmountInPLN(accountWithOneZloty));
+    assertEquals(new BigDecimal("1.000"), workShop.getAccountAmountInPLN(accountWithOneZloty));
 
     final Account accountWithOneDolar = Account.builder()
         .amount(new BigDecimal("1.0"))
@@ -524,7 +524,7 @@ public class WorkShopTest {
         .currency(Currency.PLN)
         .build();
 
-    assertEquals(new BigDecimal("1.00"), workShop.getAccountAmountInPLNAsStream(accountWithOneZloty));
+    assertEquals(new BigDecimal("1.000"), workShop.getAccountAmountInPLNAsStream(accountWithOneZloty));
 
     final Account accountWithOneDolar = Account.builder()
         .amount(new BigDecimal("1.0"))
