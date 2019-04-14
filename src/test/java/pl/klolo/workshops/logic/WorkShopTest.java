@@ -1,8 +1,14 @@
 package pl.klolo.workshops.logic;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.BlockJUnit4ClassRunner;
+import pl.klolo.workshops.domain.Account;
+import pl.klolo.workshops.domain.AccountType;
+import pl.klolo.workshops.domain.Currency;
+import pl.klolo.workshops.domain.Permit;
+import pl.klolo.workshops.domain.User;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -13,15 +19,10 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import pl.klolo.workshops.domain.Account;
-import pl.klolo.workshops.domain.AccountType;
-import pl.klolo.workshops.domain.Currency;
-import pl.klolo.workshops.domain.Permit;
-import pl.klolo.workshops.domain.User;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(BlockJUnit4ClassRunner.class)
 public class WorkShopTest {
@@ -492,6 +493,15 @@ public class WorkShopTest {
   @Test
   public void shouldReturnSetOfAllCurrenciesAsStream() {
     final String allUsedCurrecies = workShop.getAllCurrenciesAsStream();
+    assertEquals("CHF, EUR, PLN, USD", allUsedCurrecies);
+  }
+
+  /**
+   * 12.
+   */
+  @Test
+  public void shouldReturnSetOfAllCurrenciesUsingGenerate() {
+    final String allUsedCurrecies = workShop.getAllCurrenciesUsingGenerate();
     assertEquals("CHF, EUR, PLN, USD", allUsedCurrecies);
   }
 

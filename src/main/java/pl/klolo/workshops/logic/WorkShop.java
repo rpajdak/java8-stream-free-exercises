@@ -12,6 +12,7 @@ import pl.klolo.workshops.mock.HoldingMockGenerator;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -282,24 +283,53 @@ class WorkShop {
    * Zwraca listę wszystkich walut w jakich są rachunki jako string, w którym wartości występują bez powtórzeń i są posortowane.
    */
   String getAllCurrencies() {
-    return null;
+    Set<String> currencies = new HashSet<>(4);
+    for (Holding holding: holdings) {
+      for (Company company: holding.getCompanies()){
+        for (User user: company.getUsers()){
+          for (Account account: user.getAccounts()) {
+             currencies.add(account.getCurrency().toString());
+          }
+        }
+      }
+    }
+    List<String> sortedCurrencies = new ArrayList<>(currencies);
+    sortedCurrencies.sort(Comparator.naturalOrder());
+    StringBuilder returnValue = new StringBuilder();
+    for (String currency: sortedCurrencies){
+      if (returnValue.length() != 0) {
+        returnValue.append(", ");
+      }
+      returnValue.append(currency);
+    }
+    return returnValue.toString();
   }
 
   /**
    * Zwraca listę wszystkich walut w jakich są rachunki jako string, w którym wartości występują bez powtórzeń i są posortowane. Napisz to za pomocą strumieni.
    */
   String getAllCurrenciesAsStream() {
-    return null;
+    return getAccountStream()
+        .map(account -> account.getCurrency().toString())
+        .distinct()
+        .sorted()
+        .collect(Collectors.joining(", "));
   }
 
   /**
-   * Metoda zwraca analogiczne dane jak getAllCurrencies, jednak na utworzonym zbiorze nie uruchamiaj metody stream, tylko skorzystaj z  Stream.generate.
+   * Metoda zwraca analogiczne dane jak getAllCurrencies,
+   * jednak na utworzonym zbiorze nie uruchamiaj metody stream, tylko skorzystaj z  Stream.generate.
    * Wspólny kod wynieś do osobnej metody.
    *
    * @see #getAllCurrencies()
    */
   String getAllCurrenciesUsingGenerate() {
-    return null;
+    Set<Currency> curenciesSet = getCurenciesSet();
+    return Stream.generate(curenciesSet.iterator()::next)
+        .distinct()
+        .limit(curenciesSet.size())
+        .map(Enum::toString)
+        .sorted().collect(Collectors.joining(", "));
   }
 
   /**
@@ -700,8 +730,9 @@ class WorkShop {
   /**
    * Tworzy strumień rachunków.
    */
-  private Stream<Account> getAccoutStream() {
-    return null;
+  private Stream<Account> getAccountStream() {
+    return getUserStream()
+        .flatMap(user -> user.getAccounts().stream());
   }
 
   /**
