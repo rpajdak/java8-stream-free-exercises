@@ -151,7 +151,7 @@ public class WorkShopTest {
         .currency(Currency.PLN)
         .build();
 
-    assertEquals(new BigDecimal("1.00"), workShop.getAccountAmountInPLN(accountWithOneZloty));
+    assertEquals(new BigDecimal("1.000"), workShop.getAccountAmountInPLN(accountWithOneZloty));
 
     final Account accountWithOneDolar = Account.builder()
         .amount(new BigDecimal("1.0"))
@@ -514,7 +514,7 @@ public class WorkShopTest {
         .currency(Currency.PLN)
         .build();
 
-    assertEquals(new BigDecimal("1.00"), workShop.getAccountAmountInPLNAsStream(accountWithOneZloty));
+    assertEquals(new BigDecimal("1.000"), workShop.getAccountAmountInPLNAsStream(accountWithOneZloty));
 
     final Account accountWithOneDolar = Account.builder()
         .amount(new BigDecimal("1.0"))
@@ -823,8 +823,8 @@ public class WorkShopTest {
     assertEquals(4, usersByPredicate.get(false).size());
     final Map<Boolean, List<User>> usersByPredicate2 = workShop.divideUsersByPredicate(user -> user.getAge() > 30);
     assertNotNull(usersByPredicate2);
-    assertEquals(9, usersByPredicate2.get(true).size());
-    assertEquals(11, usersByPredicate2.get(false).size());
+    assertEquals(11, usersByPredicate2.get(true).size());
+    assertEquals(9, usersByPredicate2.get(false).size());
   }
 
   @Test
@@ -835,7 +835,7 @@ public class WorkShopTest {
     assertEquals(4, usersByPredicate.get(false).size());
     final Map<Boolean, List<User>> usersByPredicate2 = workShop.divideUsersByPredicateAsStream(user -> user.getAge() > 30);
     assertNotNull(usersByPredicate2);
-    assertEquals(9, usersByPredicate2.get(true).size());
-    assertEquals(11, usersByPredicate2.get(false).size());
+    assertEquals(11, usersByPredicate2.get(true).size());
+    assertEquals(9, usersByPredicate2.get(false).size());
   }
 }
