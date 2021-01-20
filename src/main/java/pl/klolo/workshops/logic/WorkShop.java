@@ -250,14 +250,18 @@ class WorkShop {
      * Zwraca liczbę wszystkich rachunków, użytkowników we wszystkich firmach.
      */
     long getAllUserAccountsAmount() {
-        return -1;
+
+        return 0;
     }
 
     /**
      * Zwraca liczbę wszystkich rachunków, użytkowników we wszystkich firmach. Napisz to za pomocą strumieni.
      */
     long getAllUserAccountsAmountAsStream() {
-        return -1;
+        return getCompanyStream()
+                .flatMap(company -> company.getUsers().stream())
+                .flatMap(user -> user.getAccounts().stream())
+                .count();
     }
 
     /**
