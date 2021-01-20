@@ -306,7 +306,13 @@ class WorkShop {
      * Zwraca listę wszystkich walut w jakich są rachunki jako string, w którym wartości występują bez powtórzeń i są posortowane. Napisz to za pomocą strumieni.
      */
     String getAllCurrenciesAsStream() {
-        return null;
+        return getCompanyStream()
+                .flatMap(company -> company.getUsers().stream())
+                .flatMap(user -> user.getAccounts().stream())
+                .map(account -> account.getCurrency().toString())
+                .sorted((o1, o2) -> o1.toString().compareTo(o2.toString()))
+                .distinct()
+                .collect(Collectors.joining(", "));
     }
 
     /**
