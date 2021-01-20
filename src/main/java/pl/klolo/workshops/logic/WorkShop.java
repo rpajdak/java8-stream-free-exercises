@@ -250,8 +250,15 @@ class WorkShop {
      * Zwraca liczbę wszystkich rachunków, użytkowników we wszystkich firmach.
      */
     long getAllUserAccountsAmount() {
+        int result = 0;
 
-        return 0;
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers())
+                    result += user.getAccounts().size();
+            }
+        }
+        return result;
     }
 
     /**
