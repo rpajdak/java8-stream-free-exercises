@@ -1,18 +1,17 @@
 package pl.klolo.workshops.logic;
 
+import pl.klolo.workshops.domain.Currency;
+import pl.klolo.workshops.domain.*;
+import pl.klolo.workshops.mock.HoldingMockGenerator;
+
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import pl.klolo.workshops.domain.*;
-import pl.klolo.workshops.domain.Currency;
-import pl.klolo.workshops.mock.HoldingMockGenerator;
 
 class WorkShop {
 
@@ -322,14 +321,20 @@ class WorkShop {
      * @see #getAllCurrencies()
      */
     String getAllCurrenciesUsingGenerate() {
-        return null;
+        List<String> currencies = getAllCurrenciesAsList();
+
+        return Stream.generate(currencies.iterator()::next)
+                .collect(Collectors.joining(", "));
+
     }
+
 
     /**
      * Zwraca liczbę kobiet we wszystkich firmach.
      */
     long getWomanAmount() {
-        return -1;
+
+       return -1;
     }
 
     /**
@@ -337,7 +342,10 @@ class WorkShop {
      * czy mamy doczynienia z kobietą inech będzie polem statycznym w klasie. Napisz to za pomocą strumieni.
      */
     long getWomanAmountAsStream() {
-        return -1;
+        return getCompanyStream()
+                .flatMap(company -> company.getUsers().stream())
+                .filter(isWoman)
+                .count();
     }
 
 
@@ -732,4 +740,13 @@ class WorkShop {
         return null;
     }
 
+    private ArrayList<String> getAllCurrenciesAsList() {
+        return getCompanyStream()
+                .flatMap(company -> company.getUsers().stream())
+                .flatMap(user -> user.getAccounts().stream())
+                .map(account -> account.getCurrency().toString())
+                .sorted((o1, o2) -> o1.toString().compareTo(o2.toString()))
+                .distinct()
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
 }
