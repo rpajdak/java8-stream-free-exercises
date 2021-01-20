@@ -275,7 +275,31 @@ class WorkShop {
      * Zwraca listę wszystkich walut w jakich są rachunki jako string, w którym wartości występują bez powtórzeń i są posortowane.
      */
     String getAllCurrencies() {
-        return null;
+        StringBuilder result = new StringBuilder();
+        Set<Currency> currencies = new HashSet<>();
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers())
+                    for (Account account : user.getAccounts()) {
+                        currencies.add(account.getCurrency());
+                    }
+            }
+        }
+        List<Currency> sorted = currencies.stream().sorted((o1, o2) -> o1.toString().compareTo(o2.toString())).
+                collect(Collectors.toList());
+
+        int counter = 0;
+        int numberOfCurrencies = sorted.size();
+
+        for (Currency currency : sorted) {
+            result.append(currency);
+            counter++;
+            if (counter < numberOfCurrencies) {
+                result.append(", ");
+            }
+        }
+
+        return result.toString();
     }
 
     /**
