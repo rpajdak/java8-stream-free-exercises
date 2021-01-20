@@ -333,8 +333,17 @@ class WorkShop {
      * Zwraca liczbę kobiet we wszystkich firmach.
      */
     long getWomanAmount() {
-
-       return -1;
+        int numberOfWomen = 0;
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    if (user.getSex().equals(Sex.WOMAN)) {
+                        numberOfWomen++;
+                    }
+                }
+            }
+        }
+        return numberOfWomen;
     }
 
     /**
