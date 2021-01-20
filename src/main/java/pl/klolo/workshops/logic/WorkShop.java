@@ -202,7 +202,21 @@ class WorkShop {
      * Zwraca listę firm jako string gdzie poszczególne firmy są oddzielone od siebie znakiem "+"
      */
     String getAllCompaniesNamesAsString() {
-        return null;
+
+        StringBuilder result = new StringBuilder();
+        long numberOfCompanies = holdings.stream().mapToLong(holding -> holding.getCompanies().size())
+                .sum();
+        long counter = 0;
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                result.append(company.getName());
+                counter++;
+                if (counter < numberOfCompanies) {
+                    result.append("+");
+                }
+            }
+        }
+        return result.toString();
     }
 
     /**
