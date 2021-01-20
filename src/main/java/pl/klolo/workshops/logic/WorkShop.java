@@ -223,7 +223,10 @@ class WorkShop {
      * Zwraca listę firm jako string gdzie poszczególne firmy są oddzielone od siebie znakiem "+" Napisz to za pomocą strumieni.
      */
     String getAllCompaniesNamesAsStringAsStream() {
-        return null;
+        return holdings.stream()
+                .flatMap(holding -> holding.getCompanies().stream())
+                .map(company -> company.getName())
+                .collect(Collectors.joining("+"));
     }
 
     /**
