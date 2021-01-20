@@ -6,6 +6,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -223,8 +224,7 @@ class WorkShop {
      * Zwraca listę firm jako string gdzie poszczególne firmy są oddzielone od siebie znakiem "+" Napisz to za pomocą strumieni.
      */
     String getAllCompaniesNamesAsStringAsStream() {
-        return holdings.stream()
-                .flatMap(holding -> holding.getCompanies().stream())
+        return getCompanyStream()
                 .map(company -> company.getName())
                 .collect(Collectors.joining("+"));
     }
@@ -236,7 +236,14 @@ class WorkShop {
      * UWAGA: Zadanie z gwiazdką. Nie używamy zmiennych.
      */
     String getAllCompaniesNamesAsStringUsingStringBuilder() {
-        return null;
+        return getCompanyStream()
+                .map(Company::getName)
+                .collect(Collector.of(StringBuilder::new,
+                        (stringBuilder, o) -> stringBuilder.append(o).append("+"),
+                        StringBuilder::append,
+                        stringBuilder -> stringBuilder.delete(stringBuilder.length() - 1, stringBuilder.length())))
+                .toString();
+
     }
 
     /**
