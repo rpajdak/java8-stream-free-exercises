@@ -431,7 +431,18 @@ class WorkShop {
      * Metoda filtruje użytkowników starszych niż podany jako parametr wiek, wyświetla ich na konsoli, odrzuca mężczyzn i zwraca ich imiona w formie listy.
      */
     List<String> getOldWoman(final int age) {
-        return null;
+        List<String> names = new ArrayList<>();
+
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    if (user.getAge() >= age && user.getSex().equals(Sex.WOMAN)) {
+                        names.add(user.getFirstName());
+                    }
+                }
+            }
+        }
+        return names;
     }
 
     /**
