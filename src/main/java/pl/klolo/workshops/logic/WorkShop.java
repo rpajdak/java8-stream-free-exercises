@@ -406,14 +406,25 @@ class WorkShop {
      * Zwraca imiona użytkowników w formie zbioru, którzy spełniają podany warunek.
      */
     Set<String> getUsersForPredicate(final Predicate<User> userPredicate) {
-        return getUserStream().filter(userPredicate).map(User::getFirstName).collect(Collectors.toSet());
+        Set<String> names = new HashSet<>();
+
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    if (userPredicate.test(user)) {
+                        names.add(user.getFirstName());
+                    }
+                }
+            }
+        }
+        return names;
     }
 
     /**
      * Zwraca imiona użytkowników w formie zbioru, którzy spełniają podany warunek. Napisz to za pomocą strumieni.
      */
     Set<String> getUsersForPredicateAsStream(final Predicate<User> userPredicate) {
-        return null;
+        return getUserStream().filter(userPredicate).map(User::getFirstName).collect(Collectors.toSet());
     }
 
     /**
