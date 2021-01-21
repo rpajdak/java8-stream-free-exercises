@@ -406,7 +406,7 @@ class WorkShop {
      * Zwraca imiona użytkowników w formie zbioru, którzy spełniają podany warunek.
      */
     Set<String> getUsersForPredicate(final Predicate<User> userPredicate) {
-        return null;
+        return getUserStream().filter(userPredicate).map(User::getFirstName).collect(Collectors.toSet());
     }
 
     /**
