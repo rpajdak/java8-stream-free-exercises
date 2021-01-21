@@ -5,6 +5,7 @@ import pl.klolo.workshops.domain.*;
 import pl.klolo.workshops.mock.HoldingMockGenerator;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -351,8 +352,7 @@ class WorkShop {
      * czy mamy doczynienia z kobietą inech będzie polem statycznym w klasie. Napisz to za pomocą strumieni.
      */
     long getWomanAmountAsStream() {
-        return getCompanyStream()
-                .flatMap(company -> company.getUsers().stream())
+        return getUserStream()
                 .filter(isWoman)
                 .count();
     }
@@ -362,7 +362,8 @@ class WorkShop {
      * Przelicza kwotę na rachunku na złotówki za pomocą kursu określonego w enum Currency. Ustaw precyzje na 3 miejsca po przecinku.
      */
     BigDecimal getAccountAmountInPLN(final Account account) {
-        return null;
+
+        return account.getAmount().multiply(BigDecimal.valueOf(account.getCurrency().rate)).setScale(3, RoundingMode.HALF_UP);
     }
 
 
@@ -746,7 +747,8 @@ class WorkShop {
      * Tworzy strumień użytkowników.
      */
     private Stream<User> getUserStream() {
-        return null;
+        return getCompanyStream()
+                .flatMap(company -> company.getUsers().stream());
     }
 
     private ArrayList<String> getAllCurrenciesAsList() {
