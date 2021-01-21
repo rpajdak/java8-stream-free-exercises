@@ -385,7 +385,14 @@ class WorkShop {
      * Przelicza kwotę na podanych rachunkach na złotówki za pomocą kursu określonego w enum Currency  i sumuje ją.
      */
     BigDecimal getTotalCashInPLN(final List<Account> accounts) {
-        return null;
+        BigDecimal result = new BigDecimal(0);
+        for (Account account : accounts) {
+            float rate = Currency.valueOf(account.getCurrency().toString()).rate;
+            System.out.println(rate);
+            result = result.add(account.getAmount().multiply(BigDecimal.valueOf(rate)));
+        }
+
+        return result;
     }
 
     /**
