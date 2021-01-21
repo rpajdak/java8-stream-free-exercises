@@ -363,6 +363,10 @@ class WorkShop {
      */
     BigDecimal getAccountAmountInPLN(final Account account) {
 
+        return getAmountInCurrency(account);
+    }
+
+    private BigDecimal getAmountInCurrency(Account account) {
         return account.getAmount().multiply(BigDecimal.valueOf(account.getCurrency().rate)).setScale(3, RoundingMode.HALF_UP);
     }
 
@@ -371,7 +375,10 @@ class WorkShop {
      * Przelicza kwotę na rachunku na złotówki za pomocą kursu określonego w enum Currency. Napisz to za pomocą strumieni.
      */
     BigDecimal getAccountAmountInPLNAsStream(final Account account) {
-        return null;
+        return Stream.of(account)
+                .map(this::getAmountInCurrency)
+                .findFirst()
+                .get();
     }
 
     /**
