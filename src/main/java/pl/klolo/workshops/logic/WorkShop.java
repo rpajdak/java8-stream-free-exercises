@@ -595,7 +595,14 @@ class WorkShop {
      * Zwraca mapę firm, gdzie kluczem jest jej nazwa a wartością lista pracowników.
      */
     Map<String, List<User>> getUserPerCompany() {
-        return null;
+        Map<String, List<User>> companyAndUsersList = new HashMap<>();
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                companyAndUsersList.put(company.getName(), company.getUsers());
+            }
+        }
+
+        return companyAndUsersList;
     }
 
     /**
