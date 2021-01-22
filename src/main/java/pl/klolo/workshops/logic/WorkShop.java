@@ -558,11 +558,14 @@ class WorkShop {
         return null;
     }
 
+
     /**
      * Zwraca pierwszego z brzegu użytkownika dla podanego warunku. W przypadku kiedy nie znajdzie użytkownika wyrzuca wyjątek IllegalArgumentException.
      */
     User getUser(final Predicate<User> predicate) {
         return null;
+
+
     }
 
     /**
@@ -570,7 +573,11 @@ class WorkShop {
      * za pomocą strumieni.
      */
     User getUserAsStream(final Predicate<User> predicate) {
-        return null;
+        return getUsersAsStream()
+                .stream()
+                .filter(predicate)
+                .findFirst()
+                .get();
     }
 
     /**
@@ -831,8 +838,8 @@ class WorkShop {
     /**
      * Tworzy strumień rachunków.
      */
-    private Stream<Account> getAccoutStream() {
-        return null;
+    private Stream<Account> getAccountStream() {
+        return getUserStream().flatMap(user -> user.getAccounts().stream());
     }
 
     /**
