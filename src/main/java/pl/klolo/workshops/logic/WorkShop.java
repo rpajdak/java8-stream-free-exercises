@@ -720,6 +720,16 @@ class WorkShop {
      * Zwraca użytkownika, który spełnia podany warunek.
      */
     Optional<User> findUser(final Predicate<User> userPredicate) {
+
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    if(userPredicate.test(user)){
+                        return Optional.ofNullable(user);
+                    }
+                }
+            }
+        }
         return null;
     }
 
