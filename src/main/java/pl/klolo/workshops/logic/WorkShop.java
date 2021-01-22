@@ -617,7 +617,19 @@ class WorkShop {
      * Możesz skorzystać z metody entrySet.
      */
     Map<String, List<String>> getUserPerCompanyAsString() {
-        return null;
+        Map<String, List<String>> companyAndUsersList = new HashMap<>();
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                List<String> namesList = new ArrayList<>();
+                StringBuilder name = new StringBuilder();
+                for (User user : company.getUsers()) {
+                    name.append(user.getFirstName()).append(" ").append(user.getLastName());
+                    namesList.add(name.toString());
+                }
+                companyAndUsersList.put(company.getName(), namesList);
+            }
+        }
+        return companyAndUsersList;
     }
 
     /**
