@@ -577,7 +577,8 @@ class WorkShop {
                 .stream()
                 .filter(predicate)
                 .findFirst()
-                .get();
+                .orElseThrow(IllegalArgumentException::new);
+
     }
 
     /**
