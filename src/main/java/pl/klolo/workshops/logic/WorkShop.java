@@ -515,7 +515,20 @@ class WorkShop {
      * Zwraca nazwy pierwszych N firm. Kolejność nie ma znaczenia.
      */
     Set<String> getFirstNCompany(final int n) {
-        return null;
+        System.out.println(n + " dasdsad");
+        int counter = 0;
+        Set<String> companyNames = new HashSet<>();
+        for (Holding holding : holdings) {
+
+            for (Company company : holding.getCompanies()) {
+                if (counter < n) {
+                    companyNames.add(company.getName());
+                    counter++;
+                }
+
+            }
+        }
+        return companyNames;
     }
 
     /**
