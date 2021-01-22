@@ -471,7 +471,25 @@ class WorkShop {
      * Wyszukuje najbogatsza kobietę i zwraca ja. Metoda musi uzwględniać to że rachunki są w różnych walutach.
      */
     Optional<User> getRichestWoman() {
-        return null;
+
+        Map<User, BigDecimal> usersAndCash = new HashMap<>();
+        Set<User> users = getUsersAsStream();
+
+        for (User user : users) {
+            if (user.getSex().equals(Sex.WOMAN)) {
+                BigDecimal amount = new BigDecimal(0);
+                for (Account account : user.getAccounts()) {
+                    amount = amount.add(getAccountAmountInPLN(account));
+                }
+                usersAndCash.put(user, amount);
+            }
+        }
+
+        List<Map.Entry<User, BigDecimal>> list = new LinkedList<Map.Entry<User, BigDecimal>>(usersAndCash.entrySet());
+
+        list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
+        User richestWoman = list.get(0).getKey();
+        return Optional.ofNullable(richestWoman);
     }
 
     /**
@@ -627,7 +645,9 @@ class WorkShop {
      * zwraca zbiór wszystkich użytkowników. Jeżeli jest ich więcej niż 10 to obcina ich ilość do 10. Napisz to za pomocą strumieni.
      */
     Set<User> getUsersAsStream() {
-        return null;
+
+        return getCompanyStream().flatMap(company -> company.getUsers().stream()).collect(Collectors.toSet());
+
     }
 
     /**
