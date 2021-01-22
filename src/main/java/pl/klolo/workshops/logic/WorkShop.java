@@ -727,7 +727,7 @@ class WorkShop {
      * Zwraca użytkownika, który spełnia podany warunek. Napisz to za pomocą strumieni.
      */
     Optional<User> findUserAsStream(final Predicate<User> userPredicate) {
-        return null;
+        return getUsersAsStream().stream().filter(userPredicate).findFirst();
     }
 
     /**
