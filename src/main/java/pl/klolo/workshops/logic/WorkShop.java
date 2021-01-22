@@ -399,7 +399,9 @@ class WorkShop {
      * Przelicza kwotę na podanych rachunkach na złotówki za pomocą kursu określonego w enum Currency  i sumuje ją. Napisz to za pomocą strumieni.
      */
     BigDecimal getTotalCashInPLNAsStream(final List<Account> accounts) {
-        return null;
+        return accounts.stream()
+                .map(this::getAccountAmountInPLN)
+                .reduce(BigDecimal::add).get();
     }
 
     /**
