@@ -563,9 +563,17 @@ class WorkShop {
      * Zwraca pierwszego z brzegu użytkownika dla podanego warunku. W przypadku kiedy nie znajdzie użytkownika wyrzuca wyjątek IllegalArgumentException.
      */
     User getUser(final Predicate<User> predicate) {
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    if (predicate.test(user)) {
+                        return user;
+                    }
+                }
+            }
+        }
+
         return null;
-
-
     }
 
     /**
