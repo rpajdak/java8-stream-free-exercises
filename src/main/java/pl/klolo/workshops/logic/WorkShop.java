@@ -81,7 +81,7 @@ class WorkShop {
         int numberOfNames = names.size();
         int counter = 0;
         StringBuilder result = new StringBuilder();
-        names.sort((o1, o2) -> o1.compareTo(o2));
+        names.sort(String::compareTo);
         result.append("(");
         for (String name : names) {
             result.append(name);
@@ -99,7 +99,7 @@ class WorkShop {
      */
     String getHoldingNamesAsStringAsStream() {
         return holdings.stream()
-                .map(holding -> holding.getName())
+                .map(Holding::getName)
                 .sorted()
                 .collect(Collectors.joining(", ", "(", ")"));
     }
@@ -122,7 +122,7 @@ class WorkShop {
     long getCompaniesAmountAsStream() {
         return holdings.stream()
                 .map(holding -> holding.getCompanies().size())
-                .reduce(0, (integer, integer2) -> integer + integer2);
+                .reduce(0, Integer::sum);
     }
 
     /**
@@ -170,7 +170,7 @@ class WorkShop {
      */
     List<String> getAllCompaniesNamesAsStream() {
         return getCompanyStream()
-                .map(company -> company.getName())
+                .map(Company::getName)
                 .collect(Collectors.toList());
     }
 
@@ -195,7 +195,7 @@ class WorkShop {
      */
     LinkedList<String> getAllCompaniesNamesAsLinkedListAsStream() {
         return getCompanyStream()
-                .map(company -> company.getName())
+                .map(Company::getName)
                 .collect(Collectors.toCollection(LinkedList::new));
     }
 
@@ -225,7 +225,7 @@ class WorkShop {
      */
     String getAllCompaniesNamesAsStringAsStream() {
         return getCompanyStream()
-                .map(company -> company.getName())
+                .map(Company::getName)
                 .collect(Collectors.joining("+"));
     }
 
@@ -267,8 +267,8 @@ class WorkShop {
     long getAllUserAccountsAmountAsStream() {
         return getCompanyStream()
                 .flatMap(company -> company.getUsers().stream())
-                .flatMap(user -> user.getAccounts().stream())
-                .count();
+                .mapToLong(user -> user.getAccounts().size())
+                .sum();
     }
 
     /**
@@ -285,7 +285,7 @@ class WorkShop {
                     }
             }
         }
-        List<Currency> sorted = currencies.stream().sorted((o1, o2) -> o1.toString().compareTo(o2.toString())).
+        List<Currency> sorted = currencies.stream().sorted(Comparator.comparing(Enum::toString)).
                 collect(Collectors.toList());
 
         int counter = 0;
@@ -310,7 +310,7 @@ class WorkShop {
                 .flatMap(company -> company.getUsers().stream())
                 .flatMap(user -> user.getAccounts().stream())
                 .map(account -> account.getCurrency().toString())
-                .sorted((o1, o2) -> o1.toString().compareTo(o2.toString()))
+                .sorted(Comparator.comparing(String::toString))
                 .distinct()
                 .collect(Collectors.joining(", "));
     }
@@ -453,7 +453,7 @@ class WorkShop {
 
         return getUserStream()
                 .filter(isWoman)
-                .filter(user -> user.getAge() >= 50)
+                .filter(user -> user.getAge() >= age)
                 .map(User::getFirstName)
                 .collect(Collectors.toList());
     }
@@ -485,7 +485,7 @@ class WorkShop {
             }
         }
 
-        List<Map.Entry<User, BigDecimal>> list = new LinkedList<Map.Entry<User, BigDecimal>>(usersAndCash.entrySet());
+        List<Map.Entry<User, BigDecimal>> list = new LinkedList<>(usersAndCash.entrySet());
 
         list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
         User richestWoman = list.get(0).getKey();
@@ -496,7 +496,19 @@ class WorkShop {
      * Wyszukuje najbogatsza kobietę i zwraca ja. Metoda musi uzwględniać to że rachunki są w różnych walutach. Napisz to za pomocą strumieni.
      */
     Optional<User> getRichestWomanAsStream() {
-        return null;
+
+        return getUsersAsStream()
+                .stream()
+                .filter(isWoman)
+                .max(Comparator.comparing(this::getUserAmount));
+
+
+    }
+
+    private BigDecimal getUserAmount(User user) {
+        return user.getAccounts().stream()
+                .map(this::getAccountAmountInPLN)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     /**
