@@ -573,7 +573,7 @@ class WorkShop {
             }
         }
 
-        return null;
+        throw new IllegalArgumentException();
     }
 
     /**
