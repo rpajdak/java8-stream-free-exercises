@@ -28,6 +28,10 @@ class WorkShop {
     // Predykat określający czy użytkownik jest mężczyzną
     private final Predicate<User> isMan = user -> user.getSex().equals(Sex.MAN);
 
+
+    // Predykat określający czy użytkownik nie jest kobietą
+    private final Predicate<User> isNoWoman = user -> !user.getSex().equals(Sex.WOMAN);
+
     WorkShop() {
         final HoldingMockGenerator holdingMockGenerator = new HoldingMockGenerator();
         holdings = holdingMockGenerator.generate();
@@ -730,11 +734,11 @@ class WorkShop {
      */
     String getUserNamesAsStream() {
         String names = getUserStream()
-                .filter(isMan)
+                .filter(isNoWoman)
                 .map(User::getFirstName)
                 .distinct()
+                .sorted()
                 .collect(Collectors.joining(" "));
-        System.out.println(names);
         return names;
     }
 
