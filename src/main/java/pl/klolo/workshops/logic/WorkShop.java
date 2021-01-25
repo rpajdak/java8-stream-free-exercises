@@ -24,6 +24,10 @@ class WorkShop {
     // Predykat określający czy użytkownik jest kobietą
     private final Predicate<User> isWoman = user -> user.getSex().equals(Sex.WOMAN);
 
+
+    // Predykat określający czy użytkownik jest mężczyzną
+    private final Predicate<User> isMan = user -> user.getSex().equals(Sex.MAN);
+
     WorkShop() {
         final HoldingMockGenerator holdingMockGenerator = new HoldingMockGenerator();
         holdings = holdingMockGenerator.generate();
@@ -690,14 +694,48 @@ class WorkShop {
      * Zwraca listę wszystkich imion w postaci Stringa, gdzie imiona oddzielone są spacją i nie zawierają powtórzeń.
      */
     String getUserNames() {
-        return null;
+        int counter = 0;
+        int maxNames = 5;
+        Set<String> names = new HashSet<>();
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    if (user.getSex().equals(Sex.MAN) || user.getSex().equals(Sex.OTHER)) {
+                        names.add(user.getFirstName());
+                    }
+                }
+            }
+        }
+        TreeSet myTreeSet = new TreeSet();
+
+        myTreeSet.addAll(names);
+        StringBuilder namesAsString = new StringBuilder();
+        for (Object o : myTreeSet) {
+            if (counter < 5) {
+                namesAsString.append(o.toString());
+                counter++;
+                if (counter < maxNames) {
+                    namesAsString.append(" ");
+                }
+            }
+        }
+
+        System.out.println(namesAsString.toString());
+        return namesAsString.toString();
     }
+
 
     /**
      * Zwraca listę wszystkich imion w postaci Stringa, gdzie imiona oddzielone są spacją i nie zawierają powtórzeń. Napisz to za pomocą strumieni.
      */
     String getUserNamesAsStream() {
-        return null;
+        String names = getUserStream()
+                .filter(isMan)
+                .map(User::getFirstName)
+                .distinct()
+                .collect(Collectors.joining(" "));
+        System.out.println(names);
+        return names;
     }
 
     /**
@@ -724,7 +762,7 @@ class WorkShop {
         for (Holding holding : holdings) {
             for (Company company : holding.getCompanies()) {
                 for (User user : company.getUsers()) {
-                    if(userPredicate.test(user)){
+                    if (userPredicate.test(user)) {
                         return Optional.ofNullable(user);
                     }
                 }
