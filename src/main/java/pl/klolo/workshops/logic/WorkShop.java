@@ -746,7 +746,20 @@ class WorkShop {
      * zwraca zbiór wszystkich użytkowników. Jeżeli jest ich więcej niż 10 to obcina ich ilość do 10.
      */
     Set<User> getUsers() {
-        return null;
+        Set<User> users = new HashSet<>(10, 10);
+        int maxCapacity = 10;
+        int counter = 0;
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    if (counter < maxCapacity) {
+                        users.add(user);
+                        counter++;
+                    }
+                }
+            }
+        }
+        return users;
     }
 
     /**
