@@ -903,7 +903,25 @@ class WorkShop {
      * List<Users>
      */
     Map<Boolean, List<User>> divideUsersByPredicate(final Predicate<User> predicate) {
-        return null;
+
+        Map<Boolean, List<User>> users = new HashMap<>();
+        List<User> trueUsers = new ArrayList<>();
+        List<User> falseUsers = new ArrayList<>();
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    if (predicate.test(user)) {
+                        trueUsers.add(user);
+                    } else {
+                        falseUsers.add(user);
+                    }
+                }
+            }
+        }
+        users.put(true, trueUsers);
+        users.put(false, falseUsers);
+
+        return users;
     }
 
     /**
