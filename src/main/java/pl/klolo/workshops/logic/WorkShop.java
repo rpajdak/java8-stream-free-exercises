@@ -880,23 +880,24 @@ class WorkShop {
      * Zwraca mapę, gdzie kluczem jest typ rachunku a wartością kwota wszystkich środków na rachunkach tego typu przeliczona na złotówki.
      */
     Map<AccountType, BigDecimal> getMoneyOnAccounts() {
-        Map<AccountType, BigDecimal> accountsList = new HashMap<>();
-        for (Holding holding : holdings) {
-            for (Company company : holding.getCompanies()) {
-                for (User user : company.getUsers()) {
-                    BigDecimal previousValue = new BigDecimal(0);
-                    for (Account account : user.getAccounts()) {
-                        previousValue = accountsList.get(account.getType());
-                        BigDecimal sum = account.getAmount().multiply(BigDecimal.valueOf(Currency.valueOf(account.getCurrency().toString()).rate));
-                        BigDecimal newValue = previousValue.add(sum);
-                        accountsList.put(account.getType(), newValue);
-                    }
-                }
-            }
-        }
+//        Map<AccountType, BigDecimal> accountsList = new HashMap<>();
+//        for (Holding holding : holdings) {
+//            for (Company company : holding.getCompanies()) {
+//                for (User user : company.getUsers()) {
+//                    BigDecimal previousValue = new BigDecimal(0);
+//                    for (Account account : user.getAccounts()) {
+//                        previousValue = accountsList.get(account.getType());
+//                        BigDecimal sum = account.getAmount().multiply(BigDecimal.valueOf(Currency.valueOf(account.getCurrency().toString()).rate));
+//                        BigDecimal newValue = previousValue.add(sum);
+//                        accountsList.put(account.getType(), newValue);
+//                    }
+//                }
+//            }
+//        }
+//        return accountsList;
+        return getAccountStream().collect(Collectors.toMap(Account::getType, account -> account.getAmount()
+                .multiply(BigDecimal.valueOf(Currency.valueOf(account.getCurrency().toString()).rate)).round(new MathContext(6, RoundingMode.DOWN)), BigDecimal::add));
 
-
-        return accountsList;
     }
 
     /**
