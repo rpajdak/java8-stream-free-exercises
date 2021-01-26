@@ -707,7 +707,19 @@ class WorkShop {
      * Zwraca mapę rachunków, gdzie kluczem jesy numer rachunku, a wartością ten rachunek.
      */
     Map<String, Account> createAccountsMap() {
-        return null;
+        Map<String, Account> accountMap = new HashMap<>();
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    for (Account account : user.getAccounts()) {
+                        accountMap.put(account.getNumber(), account);
+                    }
+                }
+            }
+        }
+
+
+        return accountMap;
     }
 
     /**
