@@ -15,6 +15,7 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.lang.String.format;
 import static java.util.stream.Collectors.*;
 
 class WorkShop {
@@ -820,7 +821,7 @@ class WorkShop {
                 }
             }
         }
-        return null;
+        return Optional.empty();
     }
 
     /**
@@ -837,7 +838,16 @@ class WorkShop {
      * Uwaga: W prawdziwym kodzie nie przekazuj Optionali jako parametrów. Napisz to za pomocą strumieni.
      */
     String getAdultantStatusAsStream(final Optional<User> user) {
-        return null;
+
+
+        return user.flatMap(u -> getUserStream().filter(u2 -> Objects.equals(u2, u)).findFirst())
+                .map(u -> format("%s %s ma lat %d", u.getFirstName(), u.getLastName(), u.getAge()))
+                .orElse("Brak użytkownika");
+
+//        return user.flatMap(u -> getUserStream()
+//                .filter(u2 -> Objects.equals(u, u2))
+//                .findFirst())
+//                .map(u -> format("%s %s ma lat %d", u.getFirstName(), u.getLastName(), u.getAge())).orElse("Brak użytkownika");
     }
 
     /**
