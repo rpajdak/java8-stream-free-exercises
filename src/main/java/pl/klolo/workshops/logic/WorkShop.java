@@ -814,7 +814,9 @@ class WorkShop {
      * Pasibrzuch, Adam Wojcik. Napisz to za pomocą strumieni.
      */
     void showAllUserAsStream() {
-        throw new IllegalArgumentException("not implemented yet");
+        getUsersAsStream()
+                .stream().map(user -> user.getFirstName() + " " + user.getLastName())
+                .forEach(System.out::println);
     }
 
     /**
