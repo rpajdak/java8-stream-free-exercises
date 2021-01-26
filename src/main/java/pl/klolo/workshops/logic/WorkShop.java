@@ -5,6 +5,7 @@ import pl.klolo.workshops.domain.*;
 import pl.klolo.workshops.mock.HoldingMockGenerator;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.*;
 import java.util.function.BiFunction;
@@ -400,7 +401,6 @@ class WorkShop {
         BigDecimal result = new BigDecimal(0);
         for (Account account : accounts) {
             float rate = Currency.valueOf(account.getCurrency().toString()).rate;
-            System.out.println(rate);
             result = result.add(account.getAmount().multiply(BigDecimal.valueOf(rate)));
         }
 
@@ -880,7 +880,23 @@ class WorkShop {
      * Zwraca mapę, gdzie kluczem jest typ rachunku a wartością kwota wszystkich środków na rachunkach tego typu przeliczona na złotówki.
      */
     Map<AccountType, BigDecimal> getMoneyOnAccounts() {
-        return null;
+        Map<AccountType, BigDecimal> accountsList = new HashMap<>();
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    BigDecimal previousValue = new BigDecimal(0);
+                    for (Account account : user.getAccounts()) {
+                        previousValue = accountsList.get(account.getType());
+                        BigDecimal sum = account.getAmount().multiply(BigDecimal.valueOf(Currency.valueOf(account.getCurrency().toString()).rate));
+                        BigDecimal newValue = previousValue.add(sum);
+                        accountsList.put(account.getType(), newValue);
+                    }
+                }
+            }
+        }
+
+
+        return accountsList;
     }
 
     /**
@@ -888,7 +904,8 @@ class WorkShop {
      * strumieni. Ustaw precyzje na 0.
      */
     Map<AccountType, BigDecimal> getMoneyOnAccountsAsStream() {
-        return null;
+        return getAccountStream().collect(Collectors.toMap(Account::getType, account -> account.getAmount()
+                .multiply(BigDecimal.valueOf(Currency.valueOf(account.getCurrency().toString()).rate)).round(new MathContext(6, RoundingMode.DOWN)), BigDecimal::add));
     }
 
     /**
