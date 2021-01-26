@@ -669,7 +669,23 @@ class WorkShop {
      * jest natomiast zbiór nazwisk tych osób.
      */
     Map<Boolean, Set<String>> getUserBySex() {
-        return null;
+        Map<Boolean, Set<String>> users = new HashMap<>();
+        Set<String> men = new HashSet<>();
+        Set<String> women = new HashSet<>();
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    if (user.getSex().equals(Sex.WOMAN)) {
+                        women.add(user.getLastName());
+                    } else if (user.getSex().equals(Sex.MAN)) {
+                        men.add(user.getLastName());
+                    }
+                }
+            }
+        }
+        users.put(false, women);
+        users.put(true, men);
+        return users;
     }
 
     /**
