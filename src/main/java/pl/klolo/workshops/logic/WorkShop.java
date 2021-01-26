@@ -7,6 +7,7 @@ import pl.klolo.workshops.mock.HoldingMockGenerator;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -650,7 +651,10 @@ class WorkShop {
      * Możesz skorzystać z metody entrySet. Napisz to za pomocą strumieni.
      */
     Map<String, List<String>> getUserPerCompanyAsStringAsStream() {
-        return null;
+
+        BiFunction<String, String, String> joinNameAndLastName = (x, y) -> x + " " + y;
+        return getCompanyStream().collect(Collectors.toMap(Company::getName, company -> company.getUsers().stream()
+                .map(user -> joinNameAndLastName.apply(user.getFirstName(), user.getLastName())).collect(Collectors.toList())));
     }
 
     /**
