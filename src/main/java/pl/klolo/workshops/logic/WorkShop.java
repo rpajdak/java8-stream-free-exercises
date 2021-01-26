@@ -726,7 +726,12 @@ class WorkShop {
      * Zwraca mapę rachunków, gdzie kluczem jesy numer rachunku, a wartością ten rachunek. Napisz to za pomocą strumieni.
      */
     Map<String, Account> createAccountsMapAsStream() {
-        return null;
+     return getUsersAsStream()
+             .stream()
+             .flatMap(user -> user.getAccounts().stream())
+             .collect(Collectors.toMap(Account::getNumber,account -> account));
+
+
     }
 
     /**
