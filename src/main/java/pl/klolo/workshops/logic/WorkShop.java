@@ -14,6 +14,8 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.*;
+
 class WorkShop {
 
     /**
@@ -434,7 +436,7 @@ class WorkShop {
      * Zwraca imiona użytkowników w formie zbioru, którzy spełniają podany warunek. Napisz to za pomocą strumieni.
      */
     Set<String> getUsersForPredicateAsStream(final Predicate<User> userPredicate) {
-        return getUserStream().filter(userPredicate).map(User::getFirstName).collect(Collectors.toSet());
+        return getUserStream().filter(userPredicate).map(User::getFirstName).collect(toSet());
     }
 
     /**
@@ -549,7 +551,7 @@ class WorkShop {
         return getCompanyStream()
                 .map(Company::getName)
                 .limit(n)
-                .collect(Collectors.toSet());
+                .collect(toSet());
     }
 
     /**
@@ -693,7 +695,12 @@ class WorkShop {
      * jest natomiast zbiór nazwisk tych osób. Napisz to za pomocą strumieni.
      */
     Map<Boolean, Set<String>> getUserBySexAsStream() {
-        return null;
+        final Predicate<User> isManOrWoman = user -> user.getSex().equals(Sex.WOMAN) || user.getSex().equals(Sex.MAN);
+
+        return getUsersAsStream()
+                .stream()
+                .filter(isManOrWoman)
+                .collect(partitioningBy(isMan, mapping(User::getLastName, toSet())));
     }
 
     /**
@@ -762,7 +769,7 @@ class WorkShop {
      * zwraca zbiór wszystkich użytkowników. Jeżeli jest ich więcej niż 10 to obcina ich ilość do 10.
      */
     Set<User> getUsers() {
-        return getUsersAsStream().stream().limit(10).collect(Collectors.toSet());
+        return getUsersAsStream().stream().limit(10).collect(toSet());
 
     }
 
@@ -771,7 +778,7 @@ class WorkShop {
      */
     Set<User> getUsersAsStream() {
 
-        return getCompanyStream().flatMap(company -> company.getUsers().stream()).collect(Collectors.toSet());
+        return getCompanyStream().flatMap(company -> company.getUsers().stream()).collect(toSet());
 
     }
 
