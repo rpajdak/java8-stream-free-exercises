@@ -619,7 +619,10 @@ class WorkShop {
      * Zwraca mapę firm, gdzie kluczem jest jej nazwa a wartością lista pracowników. Napisz to za pomocą strumieni.
      */
     Map<String, List<User>> getUserPerCompanyAsStream() {
-        return null;
+
+        return getCompanyStream()
+                .collect(Collectors.toMap(Company::getName, (Company::getUsers)));
+
     }
 
     /**
@@ -726,10 +729,10 @@ class WorkShop {
      * Zwraca mapę rachunków, gdzie kluczem jesy numer rachunku, a wartością ten rachunek. Napisz to za pomocą strumieni.
      */
     Map<String, Account> createAccountsMapAsStream() {
-     return getUsersAsStream()
-             .stream()
-             .flatMap(user -> user.getAccounts().stream())
-             .collect(Collectors.toMap(Account::getNumber,account -> account));
+        return getUsersAsStream()
+                .stream()
+                .flatMap(user -> user.getAccounts().stream())
+                .collect(Collectors.toMap(Account::getNumber, account -> account));
 
 
     }
