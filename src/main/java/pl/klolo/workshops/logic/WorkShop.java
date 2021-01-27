@@ -913,7 +913,16 @@ class WorkShop {
      * Zwraca sumę kwadratów wieków wszystkich użytkowników.
      */
     int getAgeSquaresSum() {
-        return -1;
+        int sum = 0;
+        for (Holding holding : holdings) {
+            for (Company company : holding.getCompanies()) {
+                for (User user : company.getUsers()) {
+                    int sqaureUser = user.getAge() * user.getAge();
+                    sum += sqaureUser;
+                }
+            }
+        }
+        return sum;
     }
 
     /**
