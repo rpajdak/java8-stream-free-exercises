@@ -487,7 +487,7 @@ class WorkShop {
     Optional<User> getRichestWoman() {
 
         Map<User, BigDecimal> usersAndCash = new HashMap<>();
-        Set<User> users = getUsersAsStream();
+        Set<User> users = getUserStream().collect(toSet());
 
         for (User user : users) {
             if (user.getSex().equals(Sex.WOMAN)) {
@@ -511,8 +511,7 @@ class WorkShop {
      */
     Optional<User> getRichestWomanAsStream() {
 
-        return getUsersAsStream()
-                .stream()
+        return getUserStream()
                 .filter(isWoman)
                 .max(Comparator.comparing(this::getUserAmount));
 
@@ -595,8 +594,7 @@ class WorkShop {
      * za pomocą strumieni.
      */
     User getUserAsStream(final Predicate<User> predicate) {
-        return getUsersAsStream()
-                .stream()
+        return getUserStream()
                 .filter(predicate)
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);
@@ -705,8 +703,7 @@ class WorkShop {
     Map<Boolean, Set<String>> getUserBySexAsStream() {
         final Predicate<User> isManOrWoman = user -> user.getSex().equals(Sex.WOMAN) || user.getSex().equals(Sex.MAN);
 
-        return getUsersAsStream()
-                .stream()
+        return getUserStream()
                 .filter(isManOrWoman)
                 .collect(partitioningBy(isMan, mapping(User::getLastName, toSet())));
     }
@@ -734,8 +731,7 @@ class WorkShop {
      * Zwraca mapę rachunków, gdzie kluczem jesy numer rachunku, a wartością ten rachunek. Napisz to za pomocą strumieni.
      */
     Map<String, Account> createAccountsMapAsStream() {
-        return getUsersAsStream()
-                .stream()
+        return getUserStream()
                 .flatMap(user -> user.getAccounts().stream())
                 .collect(Collectors.toMap(Account::getNumber, account -> account));
 
@@ -794,7 +790,7 @@ class WorkShop {
      * zwraca zbiór wszystkich użytkowników. Jeżeli jest ich więcej niż 10 to obcina ich ilość do 10.
      */
     Set<User> getUsers() {
-        return getUsersAsStream().stream().limit(10).collect(toSet());
+        return getUserStream().limit(10).collect(toSet());
 
     }
 
@@ -803,7 +799,7 @@ class WorkShop {
      */
     Set<User> getUsersAsStream() {
 
-        return getCompanyStream().flatMap(company -> company.getUsers().stream()).collect(toSet());
+        return getCompanyStream().flatMap(company -> company.getUsers().stream()).limit(10).collect(toSet());
 
     }
 
@@ -828,7 +824,7 @@ class WorkShop {
      * Zwraca użytkownika, który spełnia podany warunek. Napisz to za pomocą strumieni.
      */
     Optional<User> findUserAsStream(final Predicate<User> userPredicate) {
-        return getUsersAsStream().stream().filter(userPredicate).findFirst();
+        return getUserStream().filter(userPredicate).findFirst();
     }
 
     /**
@@ -871,8 +867,7 @@ class WorkShop {
      * Pasibrzuch, Adam Wojcik. Napisz to za pomocą strumieni.
      */
     void showAllUserAsStream() {
-        getUsersAsStream()
-                .stream().map(user -> user.getFirstName() + " " + user.getLastName())
+        getUserStream().map(user -> user.getFirstName() + " " + user.getLastName())
                 .forEach(System.out::println);
     }
 
@@ -940,6 +935,11 @@ class WorkShop {
      * final. Jeżeli podano liczbę większą niż liczba użytkowników należy wyrzucić wyjątek (bez zmiany sygnatury metody).
      */
     List<User> getRandomUsers(final int n) {
+
+        Set<User> users = new HashSet<>();
+        Set<User> allUsers = getUsers();
+
+
         return null;
     }
 
