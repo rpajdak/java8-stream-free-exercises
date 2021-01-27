@@ -929,7 +929,10 @@ class WorkShop {
      * Zwraca sumę kwadratów wieków wszystkich użytkowników. Napisz to za pomocą strumieni.
      */
     int getAgeSquaresSumAsStream() {
-        return -1;
+        return getUserStream()
+                .map(user -> user.getAge() * user.getAge())
+                .reduce(0, Integer::sum);
+
     }
 
     /**
