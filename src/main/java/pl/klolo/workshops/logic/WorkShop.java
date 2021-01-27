@@ -562,7 +562,17 @@ class WorkShop {
      * rachunku metoda ma wyrzucić wyjątek IllegalStateException. Pierwsza instrukcja metody to return.
      */
     AccountType getMostPopularAccountType() {
-        return null;
+
+        return getAccountStream()
+                .map(Account::getType)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElseThrow(IllegalStateException::new);
+
+
     }
 
     /**
