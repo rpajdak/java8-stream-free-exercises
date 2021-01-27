@@ -3,11 +3,13 @@ package pl.klolo.workshops.logic;
 import pl.klolo.workshops.domain.Currency;
 import pl.klolo.workshops.domain.*;
 import pl.klolo.workshops.mock.HoldingMockGenerator;
+import pl.klolo.workshops.mock.UserMockGenerator;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -935,12 +937,16 @@ class WorkShop {
      * final. Jeżeli podano liczbę większą niż liczba użytkowników należy wyrzucić wyjątek (bez zmiany sygnatury metody).
      */
     List<User> getRandomUsers(final int n) {
+        final UserMockGenerator userMockGenerator = new UserMockGenerator();
 
-        Set<User> users = new HashSet<>();
-        Set<User> allUsers = getUsers();
+        List<User> userList = userMockGenerator.generate();
 
-
-        return null;
+        List<User> users = getUserStream().collect(toList());
+//
+        if (n > users.size()) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        return users.stream().limit(n).collect(Collectors.toList());
     }
 
     /**
@@ -948,8 +954,19 @@ class WorkShop {
      * final. Jeżeli podano liczbę większą niż liczba użytkowników należy wyrzucić wyjątek (bez zmiany sygnatury metody). Napisz to za pomocą strumieni.
      */
     List<User> getRandomUsersAsStream(final int n) {
-        return null;
+        final UserMockGenerator userMockGenerator = new UserMockGenerator();
+
+        return Optional.of(userMockGenerator.generate().stream()
+                .collect(Collectors.collectingAndThen(Collectors.toList(), collected -> {
+                    Collections.shuffle(collected);
+                    return collected.stream();
+                }))
+                .limit(n)
+                .distinct()
+                .collect(Collectors.toList()))
+                .orElseThrow(ArrayIndexOutOfBoundsException::new);
     }
+
 
     /**
      * Stwórz mapę gdzie kluczem jest typ rachunku a wartością mapa mężczyzn posiadających ten rachunek, gdzie kluczem jest obiekt User a wartoscią suma pieniędzy
