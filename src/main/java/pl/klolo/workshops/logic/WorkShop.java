@@ -673,7 +673,7 @@ class WorkShop {
      * funkcji.
      */
     <T> Map<String, List<T>> getUserPerCompany(final Function<User, T> converter) {
-        return null;
+        return getCompanyStream().collect(Collectors.toMap(Company::getName, company -> company.getUsers().stream().map(converter).collect(toList())));
     }
 
     /**
@@ -681,7 +681,8 @@ class WorkShop {
      * Napisz to za pomocą strumieni.
      */
     <T> Map<String, List<T>> getUserPerCompanyAsStream(final Function<User, T> converter) {
-        return null;
+        return getCompanyStream().collect(Collectors.toMap(Company::getName, company -> company.getUsers().stream().map(converter).collect(toList())));
+
     }
 
     /**
@@ -991,6 +992,13 @@ class WorkShop {
      * na rachunku danego typu przeliczona na złotkówki.  Napisz to za pomocą strumieni.
      */
     Map<AccountType, Map<User, BigDecimal>> getAccountUserMoneyInPLNMapAsStream() {
+        AccountType[] values = AccountType.values();
+        List<User> userList = getUserStream().collect(toList());
+        for (AccountType value : values) {
+            List<User> users = new ArrayList<>();
+
+        }
+
         return null;
     }
 
