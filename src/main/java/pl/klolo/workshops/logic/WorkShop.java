@@ -1033,7 +1033,7 @@ class WorkShop {
      * List<Users>. Wykonaj zadanie za pomoca strumieni.
      */
     Map<Boolean, List<User>> divideUsersByPredicateAsStream(final Predicate<User> predicate) {
-        return null;
+        return getUserStream().collect(partitioningBy(predicate, mapping(user -> user, toList())));
     }
 
     /**
